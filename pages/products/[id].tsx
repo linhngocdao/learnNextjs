@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Props } from 'next/script';
+
 
 const ProductDetail = (props: Props) => {
     const router = useRouter();
