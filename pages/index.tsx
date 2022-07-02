@@ -11,7 +11,7 @@ const Home: NextPage = () => {
           <li><a href="" className='menu__link'>menu 3</a></li>
           <li><a href="" className='menu__link'>menu 4</a></li>
       </ul>
-    {/* <Header /> */}
+    <Header />
   </main>
   )
 }
