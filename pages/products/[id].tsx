@@ -9,7 +9,7 @@ type ProductProps = {
   const ProductDetail = ({product}: ProductProps) => {
     if(!product) return null;
     return (
-      <div>{product.name}</div>
+      <div>{product.name} <span>|</span> {product.desc}</div>
     )
   }
   
@@ -36,7 +36,7 @@ type ProductProps = {
 export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   console.log('context', context);
   context.res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate")
-  const product = await (await fetch(`https://6110f09bc38a0900171f0ed0.mockapi.io/products/${context.params?.id}`)).json();
+  const product = await (await fetch(`http://localhost:3001/products/${context.params?.id}`)).json();
   return {
     props: { product }
   }
